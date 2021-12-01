@@ -2,9 +2,9 @@
 
 namespace UUP\Tests\Application\Options;
 
-use UUP\Application\Options\ApplicationOptionsBase;
 use PHPUnit\Framework\TestCase;
 use stdClass;
+use UUP\Application\Options\ApplicationOptionsBase;
 
 class ApplicationOptionsWrapper extends ApplicationOptionsBase
 {
