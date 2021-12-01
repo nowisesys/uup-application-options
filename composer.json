@@ -1,0 +1,42 @@
+{
+    "name": "nowise/uup-application-options",
+    "version": "1.0.0",
+    "description": "Uniform CLI and HTTP request options",
+    "type": "library",
+    "keywords": [
+        "application-options",
+        "sql",
+        "metadata",
+        "uup"
+    ],
+    "homepage": "https://nowise.se/oss/uup/application-options",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Anders Lövgren",
+            "email": "andlov@nowise.se"
+        },
+        {
+            "name": "Anders Lövgren",
+            "email": "anders.lovgren@interactivesolutions.se"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "UUP\\Application\\": "source/Application",
+            "UUP\\Example\\": "example/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "UUP\\Tests\\Application\\": "tests/Application"
+        }
+    }
+}
