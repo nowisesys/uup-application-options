@@ -5,8 +5,9 @@
     "type": "library",
     "keywords": [
         "application-options",
-        "sql",
-        "metadata",
+        "command",
+        "cli",
+        "http",
         "uup"
     ],
     "homepage": "https://nowise.se/oss/uup/application-options",
