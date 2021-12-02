@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace UUP\Example\Application;
+
 require(__DIR__ . '/../vendor/autoload.php');
 
 use UUP\Application\Console\Terminal;
