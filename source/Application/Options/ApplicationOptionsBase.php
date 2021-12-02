@@ -34,7 +34,7 @@ abstract class ApplicationOptionsBase implements ApplicationOptionsInterface
         return $this->options;
     }
 
-    protected function setOptions(array $options): void
+    public function setOptions(array $options): void
     {
         $this->options = $options;
     }
