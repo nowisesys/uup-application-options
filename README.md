@@ -1,8 +1,7 @@
-UUP-APPLICATION-OPTIONS - Options from CLI and HTTP request
+UUP-APPLICATION-OPTIONS
 =======================================================================
 
-Provides invocation agnostic handling of command (script) options. Both CLI and HTTP request options can be transparent
-used from the script without needing to know its origin.
+Supports transparent/uniform handling of runtime options from CLI command and HTTP request. 
 
 This package supports short/long options, other options and reading password from terminal (masked echo output). For
 HTTP request options, an optional filter can be applied.

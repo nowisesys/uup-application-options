@@ -1,7 +1,7 @@
 {
     "name": "nowise/uup-application-options",
-    "version": "1.0.2",
-    "description": "Uniform CLI and HTTP request options",
+    "version": "1.0.3",
+    "description": "Uniform CLI command line and HTTP request options.",
     "type": "library",
     "keywords": [
         "application-options",

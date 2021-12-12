@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace UUP\Tests\Application\Filter;
 
 use PHPUnit\Framework\TestCase;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace UUP\Tests\Application\Options;
 
 use PHPUnit\Framework\TestCase;
