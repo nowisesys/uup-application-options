@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace UUP\Tests\Application\Options;
 
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use UUP\Application\Options\ApplicationOptionsBase;
@@ -124,9 +125,11 @@ class ApplicationOptionsBaseTest extends TestCase
         $this->assertEquals(true, $wrapper->getBoolean('k2', false));
         $this->assertEquals(false, $wrapper->getBoolean('k5', false));
 
-        $this->assertEquals(true, $wrapper->getBoolean('k1'));  // string
         $this->assertEquals(1, $wrapper->getBoolean('k3'));     // float
         $this->assertEquals(8, $wrapper->getBoolean('k4'));     // int
+
+        $this->expectException(InvalidArgumentException::class);
+        $this->assertEquals(true, $wrapper->getBoolean('k1'));  // string
     }
 
     public function testGetInteger()
