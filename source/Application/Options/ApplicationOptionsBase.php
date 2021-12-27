@@ -20,6 +20,8 @@ declare(strict_types=1);
 
 namespace UUP\Application\Options;
 
+use UUP\Application\Convert\Boolean;
+
 abstract class ApplicationOptionsBase implements ApplicationOptionsInterface
 {
     private array $options = [];
@@ -65,7 +67,7 @@ abstract class ApplicationOptionsBase implements ApplicationOptionsInterface
 
     public function getBoolean(string $name, bool $default = false): bool
     {
-        return boolval($this->getOption($name, $default));
+        return Boolean::convert($this->getOption($name, $default));
     }
 
     public function getFloat(string $name, float $default = 0.0): float
