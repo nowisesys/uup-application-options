@@ -34,6 +34,11 @@ class HttpRequestOptions extends ApplicationOptionsBase implements ApplicationOp
         return basename(filter_input(INPUT_SERVER, 'PHP_SELF'));
     }
 
+    public function getOrigin(): int
+    {
+        return self::ORIGIN_HTTP;
+    }
+
     private function getParameters(array $options, ?HttpRequestFilter $filter): array
     {
         if (isset($filter)) {

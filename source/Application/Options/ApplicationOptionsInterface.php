@@ -22,7 +22,12 @@ namespace UUP\Application\Options;
 
 interface ApplicationOptionsInterface
 {
+    const ORIGIN_CLI = 1;
+    const ORIGIN_HTTP = 2;
+
     function getScript(): string;
+
+    function getOrigin(): int;
 
     function hasOptions(): bool;
 

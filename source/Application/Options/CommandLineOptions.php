@@ -32,6 +32,11 @@ class CommandLineOptions extends ApplicationOptionsBase implements ApplicationOp
         return basename($_SERVER['argv'][0]);
     }
 
+    public function getOrigin(): int
+    {
+        return self::ORIGIN_CLI;
+    }
+
     private function getParameters(array $argv, array $mapping): array
     {
         $result = [];
