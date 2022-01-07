@@ -1,7 +1,7 @@
 UUP-APPLICATION-OPTIONS
 =======================================================================
 
-Supports transparent/uniform handling of runtime options from CLI command and HTTP request. 
+Supports transparent/uniform handling of runtime options from CLI command and HTTP request.
 
 This package supports short/long options, other options and reading password from terminal (masked echo output). For
 HTTP request options, an optional filter can be applied.
@@ -22,8 +22,8 @@ private function getApplicationOptions(): ApplicationOptionsInterface
 }
 ```
 
-Calling `getApplicationOptions` will provide uniform access to application options, whether these come from command 
-line or the HTTP request. From your application perspective the origin of options is transparent.
+Calling `getApplicationOptions` will provide uniform access to application options, whether these come from command line
+or the HTTP request. From your application perspective the origin of options is transparent.
 
 From within the application, a number of convenient methods can be used for checking if options was passed and retrieve
 them with type safety.
@@ -55,6 +55,16 @@ public function execute(): void
 A number of other getters exist, for example for boolean, float and integer values. These takes a second default value
 that is returned of option is missing.
 
+### ORIGIN:
+
+If origin matters, it can be checked:
+
+```php
+if ($this->options->getOrigin() == ApplicationOptionsInterface::ORIGIN_HTTP) {
+    throw new RuntimeException("This action can't be run from a HTTP context");
+}
+```
+
 ### OPTION ALIAS:
 
 For command line options, the default behavior is to return options by stripping leading dashes ('-'). To support short
@@ -74,8 +84,8 @@ private function getApplicationOptions(): ApplicationOptionsInterface
 }
 ```
 
-These two short option will now be an alias for their equivalent long option. Some builtin aliases are implicit 
-handled for command line options. These short options are:
+These two short option will now be an alias for their equivalent long option. Some builtin aliases are implicit handled
+for command line options. These short options are:
 
 * -h => help
 * -V => version
@@ -122,7 +132,7 @@ an instance of the `HttpRequestFilter` class.
 
 ### BOOLEANS:
 
-Special treatment of boolean options are implemented. For example, option values "1", "true", "on" and "yes" yields 
+Special treatment of boolean options are implemented. For example, option values "1", "true", "on" and "yes" yields
 true. Analogous "0", "false", "off" and "no" yields false.
 
 Example: Call `getBoolean` to have the value for filter option evaluated as boolean.
