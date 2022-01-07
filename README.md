@@ -8,7 +8,7 @@ HTTP request options, an optional filter can be applied.
 
 ### USAGE:
 
-In the command action class, define a method that checks whether to return command line options (CLI) or from request
+In your command action class, define a method that checks whether to return command line options (CLI) or from request
 option (HTTP).
 
 ```php
@@ -22,8 +22,11 @@ private function getApplicationOptions(): ApplicationOptionsInterface
 }
 ```
 
+Calling `getApplicationOptions` will provide uniform access to application options, whether these come from command 
+line or the HTTP request. From your application perspective the origin of options is transparent.
+
 From within the application, a number of convenient methods can be used for checking if options was passed and retrieve
-them type safe.
+them with type safety.
 
 ```php
 public function setup() 
@@ -117,3 +120,13 @@ The default behavior is to not filter HTTP request options. For larger applicati
 input might be used that could be wrapped in a class that implements the `FilterInterface` and used instead of passing
 an instance of the `HttpRequestFilter` class.
 
+### BOOLEANS:
+
+Special treatment of boolean options are implemented. For example, option values "1", "true", "on" and "yes" yields 
+true. Analogous "0", "false", "off" and "no" yields false.
+
+Example: Call `getBoolean` to have the value for filter option evaluated as boolean.
+
+```php
+$this->options->getBoolean("filter");
+```
