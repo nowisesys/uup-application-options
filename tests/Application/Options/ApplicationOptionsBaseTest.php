@@ -25,6 +25,11 @@ class ApplicationOptionsWrapper extends ApplicationOptionsBase
     {
         return "";
     }
+
+    public function getOrigin(): int
+    {
+        return 0;
+    }
 }
 
 class ApplicationOptionsBaseTest extends TestCase
